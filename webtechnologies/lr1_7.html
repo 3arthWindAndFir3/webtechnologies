@@ -7,6 +7,18 @@
 <meta name="author" content="Leonid Varaxin" />
 <link rel="stylesheet" type="text/css" href="styles/styles.css" />
 <meta name="viewport" content="width=device-width">
+<script>
+	 schoolSubjects=new Array ("Физика", "Математика",
+	  "Обществознание", "Литература");
+	 humanSciences = new Array ();
+	 hardSciences = new Array ();
+	 humanSciences = schoolSubjects.slice(2,4);
+	 hardSciences = schoolSubjects.slice(0,2);
+	 function writeSubjects () {
+		 document.write("<p><b>Точные науки:</b> " + hardSciences + "</p>");
+		 document.write("<p><b>Гуманитарные науки:</b> " + humanSciences + "</p>");
+	 }
+</script>
 </head>
 
 <body>
@@ -26,7 +38,7 @@
 				</ul>
 			</aside>
 			<div id="index-main-textpart">
-				
+				<script> writeSubjects();</script>
 			</div>
 			<aside id="index-main-rightside">
 				<p><b>Меню переключения между 
