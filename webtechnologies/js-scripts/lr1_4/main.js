@@ -1,3 +1,4 @@
+//ошибся при коммите, это 4 задание
 var checkingInput=false;
 var password="пароль";
 while (checkingInput==false) {
