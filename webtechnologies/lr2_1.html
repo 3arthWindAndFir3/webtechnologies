@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>LR2</title>
+<script src="js-scripts/jquery-3.6.0.min.js"></script> 
 <meta name="generator" content="Geany 1.37.1" />
 <meta name="author" content="Leonid Varaxin" />
 <link rel="stylesheet" type="text/css" href="styles/styles.css" />
@@ -26,15 +27,41 @@
 				</ul>
 			</aside>
 			<div id="index-main-textpart">
-				<p><b>До лучших времен</b></p>
+				<p><b>Кнопка для изменения цвета фона страницы</b></p>
+				<button id="index-main-button">Нажатие изменит 
+				цвет на темно-синий</button>
+				<script src="js-scripts/lr2_1/main.js"></script>
+				<form>
+					<p><b>Введите ваши данные:</b></p>
+					<p>Ваше имя: <input id="name" required type="text"
+					placeholder="ФИО полностью" size="30"></input><p>
+					<p>Пароль: <input id="pass" type="password" 
+					placeholder="Не менее 4 символов" 
+					size="30" required></input></p>
+					<p>Подтверждение пароля: <input id="repeat" required
+					type="password" placeholder="Повторите пароль, указанный выше"
+					size="30"></input></p>
+					<p>Адрес электронной почты: <input id="email" 
+					"type="text" placeholder="postname@host.domain" 
+					size="30" required></input></p>
+					<p>Тема письма: <input id="theme" type="text" 
+					placeholder="Тема письма" size="30"></input></p>
+					<p>Содержание письма:</p> 
+					<p><textarea id="contain" size="300"  
+					cols="50" rows="10" required></textarea></p>
+					<p> <button id="send" type="submit">Отправить</button>
+					<button id="clear" type="clean">Очистить</button> </p>
+					<script src="js-scripts/lr2_2/main.js"></script>
+				</form>
 			</div>
+
 			<aside id="index-main-rightside">
-			<!--	<p><b>Меню переключения между 
+				<p><b>Меню переключения между 
 				заданиями в рамках одной лабораторной работы</b></p>
 				<ul>
-						<li>Заглушка под задание</li>
-						<li>Заглушка под задание</li>
-				</ul> -->
+						<li><a href="lr2_1.html">Страница 1</a></li>
+						<li><a href="lr2_2.php">Страница 2</a></li>
+				</ul> 
 			</aside>
 	</main>
 	
@@ -42,3 +69,4 @@
 </body>
 
 </html>
+
