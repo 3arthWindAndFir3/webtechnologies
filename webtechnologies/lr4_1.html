@@ -5,8 +5,39 @@
 <title>LR4</title>
 <meta name="generator" content="Geany 1.37.1" />
 <meta name="author" content="Leonid Varaxin" />
+<script src="js-scripts/jquery-3.6.0.min.js"></script> 
 <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui.css" />
+<script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <meta name="viewport" content="width=device-width">
+
+<style>
+#country {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+#adult-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+
+#kid-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+
+</style>
+
 </head>
 
 <body>
@@ -25,9 +56,62 @@
 					<li><a href="lr5_1.html">Лабораторная работа №5</a></li>
 				</ul>
 			</aside>
+
+
 			<div id="index-main-textpart">
-				<p><b>До лучших времен</b></p>
+				<!-- Header -->
+				<h1>Список доступных туров</h1>
+				<!-- список рейсов -->
+				<div id='tickets'>
+					<h3>Египет</h3><div><p><img id='country' src='images/egypt.jpg' alt='egypt' height='250' width='400' /></p><p>Отдых в Египте - это знакомство с величественными пирамидами и знаменитым Сфинксом, завораживающими храмами Луксора, непревзойденными сокровищницами Тутанхомона и многими другими столь же интересными достопримечательностями. Эта страна открыта для путешествия круглый год. Самым жарким периодом на красном море считается летний, то есть с июня месяца и по сентябрь.</p></div>
+					<h3>Греция</h3><div><p><img id='country' src='images/greece.jpg' alt='greece' height='250' width='400' /></p><p>Греция – это страна на юге Европы, расположенная на Балканском полуострове и более 3000 больших и маленьких островах. Это колыбель западной цивилизации, манящая туристов не только ласковыми водами Эгейского и Ионического морей и красотами природы, но и множеством достопримечательностей с многовековой историей.</p></div>
+					<h3>Италия</h3><div><p><img id='country' src='images/italy.jpg' alt='italy' height='250' width='400' /></p><p>Яркая, многоликая, прекрасная, Италия сразу и бесповоротно пленяет своей пестротой и романтическим настроением. Несмотря на множество пограничных «соседей», страна сохранила свой исконный дух: самые модные и современные детали соседствуют с многовековыми традициями, стильные витрины бутиков – с вычурными палаццо и старинными зданиями в романском и готическом стилях, романтичные кафешки – с захватывающими дух архитектурными ансамблями, помпезными фонтанами и самыми невероятными достопримечательностями.</p></div>
+					<h3>Франция</h3><div><p><img id='country' src='images/france.jpg' alt='france' height='250' width='400' /></p><p>Элегантная красавица-Франция — это отдых с шармом: отдых на утонченном Лазурном Берегу, знаменитые музеи, гастрономические провинции и замки Луары. Кухня, вино и горнолыжные курорты — все о Франции: туры, цены, отели и достопримечательности.</p></div>
+					<h3>Турция</h3><div><p><img id='country' src='images/turkey.jpg' alt='turkey' height='250' width='400' /></p><p>Отдых в Турции - это недорогой отдых при европейском качестве обслуживания. Изумительная природа, золотые песчаные пляжи, живописные горы, покрытые сосновыми реликтовыми лесами, яркое солнце и, конечно, кристально-чистое, ласковое и теплое море — все это делает курорты Турции привлекательными для туристов. Турция — страна живой культуры, страна древних цивилизаций. Здесь удивительным образом сочетается расслабляющая атмосфера пляжного отдыха, оживленная ночная жизнь, дружелюбие и гостеприимство местного населения, древняя история и развитая инфраструктура курортов.</p></div>
+				</div>
+				<!-- скрипт на аккордеон-->
+				<script>
+					$( function() {
+					    $( "#tickets" ).accordion();
+					  } );
+				</script>
+
+				<div id="wanna-buy"><p><b>Уже определились, где хотите провести отдых вашей мечты?)</b></p>
+				<p><button id='buy-button'>Купить!</button></p></div>
 			</div>
+			<script src='js-scripts/lr4/main.js'></script>	
+			
+			<div id='dialogue' hidden='true'>
+				<p><b>Форма для выбора тура:</b></p>
+				<form>
+				<p>Выберите страну:
+				<select name="choose-country" id="choose-country" title="Выберите ту страну, в которой бы вы хотели отдохнуть">
+     					<option selected="selected">Египет</option>
+      					<option>Греция</option>
+     					<option>Италия</option>
+    					<option>Франция</option>
+    					<option>Турция</option>
+    				</select> </p>	
+				<p>Выберите дату начала тура: <input name="date-begin" id="date-begin" required type="text" placeholder="01/01/2000" size="10" title="Выберите дату начала тура с помощью календаря. Чтобы его увидеть  - нажмите на поле"></input></p>
+				<p>Выберите дату окончания тура: <input name="date-end" id="date-end" required type="text" placeholder="01/01/2000" size="10" title="Выберите дату окончания тура с помощью календаря. Чтобы его увидеть  - нажмите на поле"></input></p>
+				<p>Число взрослых: <div id="adult-number" name="adult-number" required  title="Выберите число взрослых, которые отправляются в тур, с помощью ползунка"><div id="adult-handle" class="ui-slider-handle"></div></div> </p>				
+				<p>Число детей: <div id="kid-number" name="kid-number" required title="Выберите число детей, которые отправляются в тур, с помощью ползунка"><div id="kid-handle" class="ui-slider-handle"></div></div> </p>
+				<!--  -->
+				</form>
+				<p> <button id="cost-count" type="submit">Рассчитать стоимость</button>
+			</div>
+			
+			<div id='cost-info' hidden='true'>
+				<p>Расчетная стоимость тура: <input id="cost" name="cost" type="text" readonly size="12" title="Во сколько вам обойдется тур с выбранными параметрами"></input></p>
+				<p> <button id="yes">Да, перейти к оплате</button> </p> 
+				<p> <button id="no">Нет, изменить параметры</button> </p>
+			</div>
+
+			<div id='time-to-pay' hidden='true'>
+				<p><b>Перенаправляю на платежный шлюз...</b></p>
+				<p>а хотя нет, не отправляю. на что вы вообще надеялись?) </p>
+			</div>
+
 			<aside id="index-main-rightside">
 			<!--	<p><b>Меню переключения между 
 				заданиями в рамках одной лабораторной работы</b></p>
