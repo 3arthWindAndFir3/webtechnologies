@@ -4,13 +4,15 @@
 <meta charset="utf-8" />
 <title>LR5</title>
 <meta name="generator" content="Geany 1.37.1" />
+<script src="js-scripts/jquery-3.6.0.min.js"></script> 
 <meta name="author" content="Leonid Varaxin" />
 <link rel="stylesheet" type="text/css" href="styles/styles.css" />
 <meta name="viewport" content="width=device-width">
 </head>
 
 <body>
-	<header id="index-head">Вараксин Л.Д. ПИ-318</header>
+	<header id="index-head">Вараксин Л.Д. ПИ-318
+	<p><b>Pac-man!</b></p></header>
 
 	<main id="index-main">
 			<aside id="index-main-leftside">
@@ -26,15 +28,14 @@
 				</ul>
 			</aside>
 			<div id="index-main-textpart">
-				<p><b>До лучших времен</b></p>
+				<p><img class='drag' src='images/right.svg' alt='pacman' height='50' width='50' align='left'></img></p> 
+				<p></p>
+				<script src="js-scripts/lr5/main.js"></script>
 			</div>
 			<aside id="index-main-rightside">
-			<!--	<p><b>Меню переключения между 
-				заданиями в рамках одной лабораторной работы</b></p>
-				<ul>
-						<li>Заглушка под задание</li>
-						<li>Заглушка под задание</li>
-				</ul> -->
+				<script>
+					document.write ("<ul><li> Число фруктов: <input type='text' id='fruits'></input></li><li>Число ходов: <input type='text' id='turns'></input></li> <li>X: <input type='text' id='pacman-x'></input></li><li>Y: <input type='text' id='pacman-y'></input></li></ul>");
+				</script>
 			</aside>
 	</main>
 	
