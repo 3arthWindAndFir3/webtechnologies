@@ -1,28 +1,24 @@
-/*$("send").click(function(){
-	$.ajax({
-		url: 'review.php',
-		method: 'post'
-		data: { name: $("#name").val(), text: $("#text").val() };
-	});
-});
-*/
 $("#send").click(function(){
 	$.get('/review.php', {name: $("#name").val(), text: $("#text").val()}, function(data){
-		alert("Спасибо за ваш отзыв! (Обновите страницу чтобы увидеть свой отзыв.)");
+		alert("Спасибо за ваш отзыв! Сейчас он появится в списке остальных.");
+		$.ajax({
+		method: 'get',
+		url: "/get_reviews.php",
+        dataType: "html",
+		success: function (data) {
+			$("#put-here").html(data);
+			}
+		});
 	});
 });
 
-
-/*	  $( function() {
-	    $('#send').click( function() {
-	      var data = { name: $("#name").val(), text: $("#text").val() };
-	      $.get( "getForecast.txt", data, success, "json" );
-	    } );
-	    function success( forecastData ) {
-	      var forecast = forecastData.city + " прогноз на " + forecastData.date;
-	      forecast += ": " + forecastData.forecast + ". Максимальная температура: " + forecastData.maxTemp + "C";
-	      alert( forecast );
-	    }
-
-	  } );
-*/
+$(document).ready (function(){
+	$.ajax({
+		method: 'get',
+		url: "/get_reviews.php",
+        dataType: "html",
+		success: function (data) {
+			$("#put-here").html(data);
+			}
+		});
+	});
